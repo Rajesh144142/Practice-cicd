@@ -20,9 +20,7 @@ function Hero() {
 
             <p class="text-white w-full sm:w-[35rem] md:w-[30rem] lg:w-[25rem] mb-10">
               I am a Full-Stack Developer with 1 year of experience, specializing in the MERN stack, PostgreSQL, and Generative AI. I have built end-to-end scalable solutions, implemented AI-driven functionalities using tools like LangChain and Crew AI, and optimized backend systems.
-
               My work includes:
-
               Developing full-stack applications with MongoDB, Express.js, React, and Node.js.
               Building and optimizing RESTful APIs and robust database solutions with PostgreSQL.
               Leveraging AWS Amplify, S3, Lambda, and API Gateway for cloud-based applications.
