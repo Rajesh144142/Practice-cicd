@@ -13,7 +13,7 @@ const Hero = () => {
                 <img
                     src={Rajesh}
                     alt="Rajesh Kumar Halder"
-                    className="rounded-lg w-[250px] sm:w-[280px] h-[250px] sm:h-[280px] object-cover shadow-xl"
+                    className="rounded-lg w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] object-cover shadow-xl"
                 />
               </div>
             </div>
