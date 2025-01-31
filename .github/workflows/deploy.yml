@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '18' # Vite works best with Node.js 16+ (14 is outdated)
 
       - name: Install dependencies
         run: npm install
@@ -30,9 +30,9 @@ jobs:
       - name: Check if dist folder exists
         run: |
           if [ -d "./dist" ]; then
-            echo "Dist folder exists."
+            echo "✅ Dist folder exists."
           else
-            echo "Dist folder does not exist."
+            echo "❌ Dist folder does not exist. Build failed."
             exit 1
           fi
 
@@ -47,3 +47,7 @@ jobs:
         run: |
           aws s3 sync ./dist/ s3://cicd-react-deployment-demo/ --delete
 
+      - name: Invalidate CloudFront Cache (Optional)
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+        if: success()
