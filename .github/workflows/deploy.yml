@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18' # Vite works best with Node.js 16+ (14 is outdated)
+          node-version: '18' # Recommended for Vite
 
       - name: Install dependencies
         run: npm install
@@ -46,8 +46,3 @@ jobs:
       - name: Sync dist folder to S3
         run: |
           aws s3 sync ./dist/ s3://cicd-react-deployment-demo/ --delete
-
-      - name: Invalidate CloudFront Cache (Optional)
-        run: |
-          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
-        if: success()
