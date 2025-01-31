@@ -1,16 +1,18 @@
-import { useState } from 'react'
+import {useState} from 'react'
 import Hero from './components/hero_section'
+import Navbar from './components/navigation_bar.jsx'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0)
 
-  return (
-    <>
-     
-  <Hero/>
-    </>
-  )
+    return (
+        <>
+
+            <Hero/>
+            <Navbar/>
+        </>
+    )
 }
 
 export default App

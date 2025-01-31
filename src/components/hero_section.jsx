@@ -3,8 +3,8 @@ import Rajesh from '../assets/images/rajesh.jpg'
 
 const Hero = () => {
   return (
-      <div className="bg-gradient-to-br from-gray-900 to-black min-h-screen flex items-center">
-        <div className="max-w-7xl mx-auto px-4 py-16">
+      <div className=" min-h-screen flex items-center">
+        <div className="max-w-7xl mx-auto px-4 py-18 lg:py-16">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             {/* Image Section with Gradient Border */}
             <div className="relative group w-full lg:w-auto flex justify-center">
