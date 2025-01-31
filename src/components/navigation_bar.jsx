@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Home, GraduationCap, Briefcase, Code, Mail, Menu } from 'lucide-react';
-
+import {Link} from 'react-router-dom'
 const Header = () => {
     const [activeSection, setActiveSection] = useState('home');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const navItems = [
-        { id: 'home', label: 'Home', icon: Home },
+        { id: '', label: 'Home', icon: Home },
         { id: 'education', label: 'Education', icon: GraduationCap },
         { id: 'experience', label: 'Experience', icon: Briefcase },
         { id: 'expertise', label: 'Expertise', icon: Code },
@@ -29,8 +29,8 @@ const Header = () => {
                         <ul className="flex items-center gap-8">
                             {navItems.map(({ id, label, icon: Icon }) => (
                                 <li key={id}>
-                                    <a
-                                        href={`#${id}`}
+                                    <Link
+                                        to={`${id}`}
                                         onClick={() => setActiveSection(id)}
                                         className={`flex items-center gap-2 transition-colors duration-300 ${
                                             activeSection === id
@@ -40,7 +40,7 @@ const Header = () => {
                                     >
                                         <Icon size={18} />
                                         <span className="text-sm font-medium">{label}</span>
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>

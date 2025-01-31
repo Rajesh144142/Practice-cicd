@@ -1,18 +1,19 @@
-import {useState} from 'react'
-import Hero from './components/hero_section'
-import Navbar from './components/navigation_bar.jsx'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Hero from './components/hero_section';
+import Navbar from './components/navigation_bar';
+import Education from './components/education-section';
+import './App.css';
 
 function App() {
-    const [count, setCount] = useState(0)
-
     return (
-        <>
-
-            <Hero/>
-            <Navbar/>
-        </>
-    )
+        <Router>
+            <Routes>
+                <Route path="/" element={<Hero />} />
+                {/* <Route path="/education" element={<Education />} /> */}
+            </Routes>
+            {/* <Navbar /> */}
+        </Router>
+    );
 }
 
-export default App
+export default App;
